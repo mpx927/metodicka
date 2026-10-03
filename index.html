@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
+<html lang="ru"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Методичка по реконструкции волос — A4 Masterclass Edition</title>
@@ -1535,107 +1534,26 @@ body.edit-mode .img-control-bar,
 
 
     </style>
-</head>
-<body>
+<style id="print-page-size">@page { size: 108mm 192mm; margin: 0; }</style><style id="print-page-size">@page { size: A4; margin: 0; }</style><style id="print-page-size">@page { size: A4; margin: 0; }</style></head>
+<body class="mobile-mode">
 
     <!-- ================= FLOATING TOOLBAR ================= -->
-    <header class="toolbar-wrap no-print">
-        <div class="toolbar-brand">
-            <div class="brand-logo">H</div>
-            <div>
-                <div class="brand-text">Методичка по реконструкции</div>
-                <div class="brand-badge">A4 EDITABLE MASTERCLASS</div>
-            </div>
-        </div>
-
-        <div class="toolbar-center">
-            <select id="navSelect" class="nav-select">
-                <!-- Populated dynamically via JS -->
-            </select>
-
-            <div class="zoom-group">
-                <button class="btn-zoom" id="btnMobileToggle" onclick="toggleMobileMode()" style="border-right: 1px solid #424750; border-radius: 0; padding: 6px 12px; font-weight: 600; cursor: pointer; color: #fff;">📄 A4 / Mobile</button>
-                <button class="btn-zoom" onclick="changeZoom(-10)" title="Уменьшить масштаб">−</button>
-                <span id="zoomLevel" class="zoom-level-text">100%</span>
-                <button class="btn-zoom" onclick="changeZoom(10)" title="Увеличить масштаб">+</button>
-                <button class="btn-zoom" onclick="resetZoom()" title="Сбросить к 100%">100%</button>
-            </div>
-        </div>
-
-        <div class="toolbar-actions">
-            <button id="btnEditToggle" class="btn-action btn-edit" onclick="toggleEditMode()">
-                ✏️ Режим правки
-            </button>
-            <button id="btnSpacingToggle" class="btn-action btn-spacing" onclick="toggleSpacingMode()" title="Регулировать расстояния и отступы между любыми блоками">
-                ↕ Отступы блоков
-            </button>
-            <button class="btn-action btn-html" onclick="openHtmlModal()" title="Редактировать HTML текущей страницы">
-                &lt;/&gt; HTML страницы
-            </button>
-            <button class="btn-action btn-save" onclick="saveHtmlDocument()" title="Сохранить файл index.html со всеми правками и размерами фото">
-                💾 Сохранить HTML
-            </button>
-            <button class="btn-action btn-reset" onclick="resetToOriginal()" title="Сбросить все правки к исходной методичке">
-                ↺ Сбросить
-            </button>
-            <button class="btn-action btn-print" onclick="openPrintModal()" title="Скачать PDF или распечатать">
-                📄 Скачать в PDF
-            </button>
-        </div>
-    </header>
+    
 
     <!-- ================= TOAST NOTIFICATION ================= -->
-    <div id="toastMsg" class="toast-msg"></div>
+    
 
     <!-- Hidden file input for image replacement -->
-    <input type="file" id="imageFileInput" accept="image/*" style="display:none">
+    
 
     <!-- ================= HTML CODE EDITOR MODAL ================= -->
-    <div id="htmlModal" class="modal-overlay">
-        <div class="modal-card" style="max-width: 820px; width: 95%;">
-            <div class="modal-title">
-                <span>&lt;/&gt;</span> Редактор HTML (<span id="htmlModalPageTitle">Стр. 1</span>)
-            </div>
-            <div class="modal-desc">
-                Здесь вы можете напрямую просматривать и редактировать HTML-код страницы прямо в браузере: вставлять теги <code>&lt;img&gt;</code>, менять размер в <code>style="max-height: 65mm;"</code>, менять текст и блоки:
-            </div>
-            <textarea id="htmlModalEditor" style="width: 100%; height: 360px; font-family: 'Fira Code', Consolas, Menlo, monospace; font-size: 11.5px; line-height: 1.45; padding: 12px; border-radius: 8px; border: 1px solid #444; box-sizing: border-box; resize: vertical; background: #1a1c20; color: #e1e4e8; tab-size: 4;"></textarea>
-            <div class="modal-btn-row" style="margin-top: 14px; display: flex; justify-content: space-between; align-items: center;">
-                <div style="font-size: 11px; color: #888;">💡 Шаблон картинки: <code>&lt;div class="diagram-container"&gt;&lt;img src="assets/..." style="max-height: 65mm;"&gt;&lt;/div&gt;</code></div>
-                <div style="display: flex; gap: 10px;">
-                    <button class="btn-action btn-edit" onclick="closeHtmlModal()">Отмена</button>
-                    <button class="btn-action btn-save" onclick="applyHtmlModal()">Применить и сохранить</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- ================= PRINT / PDF MODAL ================= -->
-    <div id="printModal" class="modal-overlay">
-        <div class="modal-card">
-            <div class="modal-title">
-                <span>📄</span> Сохранение в PDF (Формат А4)
-            </div>
-            <div class="modal-desc">
-                Методичка полностью оптимизирована под печатный лист формата <strong>А4</strong> (210 × 297 мм). В открывшемся системном окне печати вашего браузера установите следующие настройки:
-            </div>
-            <div class="modal-steps">
-                <ol>
-                    <li>В поле <strong>«Принтер / Назначение»</strong> выберите: <strong>«Сохранить как PDF»</strong> (Save as PDF).</li>
-                    <li>В поле <strong>«Размер бумаги»</strong> выберите: <strong>A4</strong>.</li>
-                    <li>В поле <strong>«Поля»</strong> выберите: <strong>«Отсутствуют»</strong> (None) или «По умолчанию».</li>
-                    <li>В разделе «Параметры» обязательно <strong>отметьте галочку «Фоновые рисунки»</strong> (Background graphics), чтобы сохранились все цветные плашки, бейджи и фон.</li>
-                </ol>
-            </div>
-            <div class="modal-btn-row">
-                <button class="btn-action btn-edit" onclick="closePrintModal()">Отмена</button>
-                <button class="btn-action btn-print" onclick="triggerPrint()">Открыть окно печати (PDF)</button>
-            </div>
-        </div>
-    </div>
+    
 
     <!-- ================= DOCUMENT WORKSPACE ================= -->
-    <main class="document-container">
+    <main class="document-container" style="transform: scale(1); padding-top: 20px;">
 
     <div class="page cover-page" id="page-1">
         <div class="cover-frame">
@@ -1659,8 +1577,8 @@ body.edit-mode .img-control-bar,
                 <h2 class="cover-sub-title">ПО РЕКОНСТРУКЦИИ ВОЛОС</h2>
             </div>
             
-            <div class="cover-photo-container">
-                <div class="photo-border">
+            <div class="cover-photo-container" data-default-src="assets/instructor_cover.jpg" data-default-height="80">
+                <div class="photo-border" style="height: 80mm;">
                     <img src="assets/instructor_cover.jpg" alt="Инструктор курса" class="cover-photo">
                 </div>
             </div>
@@ -1669,7 +1587,7 @@ body.edit-mode .img-control-bar,
                 <div class="cover-author-card">
                     <div class="author-label">АВТОР И ПРЕПОДАВАТЕЛЬ КУРСА</div>
                 </div>
-                <div class="cover-edition-tag">A4 PROFESSIONAL WORKBOOK</div>
+                <div class="cover-edition-tag">Ирада Джабарова</div>
             </div>
         </div>
     </div>
@@ -1769,8 +1687,8 @@ body.edit-mode .img-control-bar,
                 </p>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/hair_structure.jpg" alt="Строение стержня волоса в разрезе" style="max-height: 58mm;">
+            <div class="diagram-container" data-default-src="assets/hair_structure.jpg" data-default-height="70">
+                <img src="assets/hair_structure.jpg" alt="Строение стержня волоса в разрезе" style="max-height: 70mm; height: auto;">
                 <div class="diagram-caption editable">Строение стержня волоса в разрезе и строение волокон кортекса</div>
             </div>
 
@@ -1829,8 +1747,8 @@ body.edit-mode .img-control-bar,
                 </div>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/hair_bonds.jpg" alt="Виды связей в волосе" style="max-height: 58mm;">
+            <div class="diagram-container" data-default-src="assets/hair_bonds.jpg" data-default-height="94">
+                <img src="assets/hair_bonds.jpg" alt="Виды связей в волосе" style="max-height: 94mm; height: auto;">
                 <div class="diagram-caption editable">Поперечные связи между волокнами: водородные, дисульфидные и ионные связи</div>
             </div>
         </div>
@@ -1921,8 +1839,7 @@ body.edit-mode .img-control-bar,
                         <strong>Щелочная зона</strong> — это все что имеет недостаток водорода.
                     </p>
                     <p class="editable" style="margin-bottom: 0; color: var(--gold-dark); font-weight: 600;">
-                        Благоприятная среда для волос 3,67-5,5 ph
-                    </p>
+                        Благоприятная среда для волос 3,67-5,5 ph.</p>
                 </div>
 
                 <p class="editable" style="margin-bottom: 4mm;">
@@ -1930,8 +1847,8 @@ body.edit-mode .img-control-bar,
                 </p>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/ph_scale.jpg" alt="Шкала pH" style="max-height: 65mm;">
+            <div class="diagram-container" data-default-src="assets/ph_scale.jpg" data-default-height="73">
+                <img src="assets/ph_scale.jpg" alt="Шкала pH" style="max-height: 73mm; height: auto;">
                 <div class="diagram-caption editable">Шкала pH: кислая, нейтральная и щелочная среда</div>
             </div>
         </div>
@@ -1964,31 +1881,31 @@ body.edit-mode .img-control-bar,
 
                 <div class="step-list">
                     <div class="card" style="padding: 3.5mm 4.5mm;">
-                        <div class="card-title" ><span class="badge-step">1</span> ОПРОС КЛИЕНТА:</div>
+                        <div class="card-title"><span class="badge-step">1</span> ОПРОС КЛИЕНТА:</div>
                         <ul class="bullet-list editable" style="margin-bottom:0; ">
-                            <li>каким красителем для волос, на каком проценте окислителя и как часто окрашиваются волосы;</li>
-                            <li>была ли кардинальная перемена цвета, например, из белого в темный или наоборот смывка из черного;</li>
-                            <li>делала ли клиентка химические завивки;</li>
-                            <li>делала ли клиентка какие-либо уходовые процедуры для волос у другого мастера ботокс, кератин, нанопластику, прикорневой объем и прочее;</li>
-                            <li>нет ли у клиентки проблем со здоровьем и каких-либо противопоказаний к произведению процедуры.</li>
+                            <li>каким красителем для волос, на каком проценте окислителя и как часто окрашиваются волосы</li>
+                            <li>была ли кардинальная перемена цвета, например, из белого в темный или наоборот смывка из черного</li>
+                            <li>делала ли клиентка химические завивки</li>
+                            <li>делала ли клиентка какие-либо уходовые процедуры для волос у другого мастера ботокс, кератин, нанопластику, прикорневой объем и прочее</li>
+                            <li>нет ли у клиентки проблем со здоровьем и каких-либо противопоказаний к произведению процедуры</li>
                         </ul>
                     </div>
 
                     <div class="card" style="padding: 3.5mm 4.5mm;">
-                        <div class="card-title" ><span class="badge-step">2</span> ВНЕШНИЙ ОСМОТР</div>
+                        <div class="card-title"><span class="badge-step">2</span> ВНЕШНИЙ ОСМОТР</div>
                         <ul class="bullet-list editable" style="margin-bottom:0; ">
-                            <li>производим внешний осмотр волоса клиента;</li>
-                            <li>также во время осмотра можно выявить раздражение или повреждение на коже головы, которые являются противопоказанием к проведению процедур;</li>
-                            <li>этническая принадлежность волоса также играет важную роль в выборе состава для работы.</li>
+                            <li>производим внешний осмотр волоса клиента</li>
+                            <li>также во время осмотра можно выявить раздражение или повреждение на коже головы, которые являются противопоказанием к проведению процедур</li>
+                            <li>этническая принадлежность волоса также играет важную роль в выборе состава для работы</li>
                         </ul>
                     </div>
 
                     <div class="card" style="padding: 3.5mm 4.5mm;">
-                        <div class="card-title" ><span class="badge-step">3</span> МЫТЬЕ ВОЛОС</div>
+                        <div class="card-title"><span class="badge-step">3</span> МЫТЬЕ ВОЛОС</div>
                         <ul class="bullet-list editable" style="margin-bottom:0; ">
-                            <li>на данном этапе важно, чтобы клиент пришёл с чистой головой, без уходовых средств;</li>
-                            <li>тонкими прядями тянем мокрый волос и проверяем на эластичность;</li>
-                            <li>далее подбираем ШГО (шампунь глубокой очистки).</li>
+                            <li>на данном этапе важно, чтобы клиент пришёл с чистой головой, без уходовых средств</li>
+                            <li>тонкими прядями тянем мокрый волос и проверяем на эластичность</li>
+                            <li>далее подбираем ШГО (шампунь глубокой очистки)</li>
                         </ul>
                     </div>
                 </div>
@@ -2014,21 +1931,21 @@ body.edit-mode .img-control-bar,
 
                 <div class="step-list">
                     <div class="card" style="padding: 4mm 5mm;">
-                        <div class="card-title" ><span class="badge-step">4</span> СУШКА ВОЛОС</div>
+                        <div class="card-title"><span class="badge-step">4</span> СУШКА ВОЛОС</div>
                         <ul class="bullet-list editable" style="margin-bottom:0;">
                             <li>Сушка волоса производится без расчески, без брашинга, без каких-либо средств, облегчающих расчесывание волос. Именно после сушки вы сможете увидеть волосы клиента такими, какие они есть на самом деле. И уже исходя из того, что мы получили мы будем строить план действий.</li>
                         </ul>
                     </div>
 
                     <div class="card" style="padding: 4mm 5mm;">
-                        <div class="card-title" ><span class="badge-step">5</span> ТЕСТ НА ПОРИСТОСТЬ</div>
+                        <div class="card-title"><span class="badge-step">5</span> ТЕСТ НА ПОРИСТОСТЬ</div>
                         <ul class="bullet-list editable" style="margin-bottom:0;">
                             <li>Тест на пористость волос показывает насколько быстро волос впитывает и теряет влагу. Производится сразу после проведения теста на эластичность, когда волосы еще мокрые. Необходимо осмотреть насколько быстро волос по всей длине, у висков или ближе к кончикам теряет влагу. Это покажет нам наиболее сухие и пористые места в полотне, в которых из-за повреждений отсутствует молекулярная влага, и, которым нужно будет уделить особое внимание при нанесении состава.</li>
                         </ul>
                     </div>
 
                     <div class="card" style="padding: 4mm 5mm;">
-                        <div class="card-title" ><span class="badge-step">6</span> ТЕСТ НА СИЛУ ЗАВИТКА</div>
+                        <div class="card-title"><span class="badge-step">6</span> ТЕСТ НА СИЛУ ЗАВИТКА</div>
                         <ul class="bullet-list editable" style="margin-bottom:0;">
                             <li>Проверка волоса на завиток — силу завитка производится после сушки волос. Именно в этот момент, мы видим натуральный завиток клиента.</li>
                         </ul>
@@ -2151,13 +2068,13 @@ body.edit-mode .img-control-bar,
 
                 <div class="step-list" style="margin-bottom: 3mm;">
                     <div class="card" style="padding: 2.2mm 3.5mm; margin-bottom: 1.8mm;">
-                        <div class="editable" >
+                        <div class="editable">
                             <strong>0</strong> — здоровые волосы, плотные, с отличным кутикулярным слоем, гладкие и блестящие
                         </div>
                     </div>
 
                     <div class="card" style="padding: 2.2mm 3.5mm; margin-bottom: 1.8mm;">
-                        <div class="editable" >
+                        <div class="editable">
                             <strong>1</strong> — небольшая сухость на концах, легкое сечение, тусклый цвет<br>
                             <span style="color: #666;">причина:</span> неправильное расчесывание<br>
                             <span style="color: var(--primary);">процедуры:</span> любые
@@ -2165,7 +2082,7 @@ body.edit-mode .img-control-bar,
                     </div>
 
                     <div class="card" style="padding: 2.2mm 3.5mm; margin-bottom: 1.8mm;">
-                        <div class="editable" >
+                        <div class="editable">
                             <strong>2</strong> — более глубокое повреждение. Сухость, спутанность волос при мытье и при расчесывании.<br>
                             <span style="color: #666;">причина:</span> неправильное расчесывание, сушка и пребывание на солнце без защиты<br>
                             <span style="color: var(--primary);">процедуры:</span> любые при t <span class="badge-temp">🔥 210–230°C</span>
@@ -2173,7 +2090,7 @@ body.edit-mode .img-control-bar,
                     </div>
 
                     <div class="card" style="padding: 2.2mm 3.5mm; margin-bottom: 1.8mm;">
-                        <div class="editable" >
+                        <div class="editable">
                             <strong>3</strong> — очень пористые, сухие, сеченые, ломкие.<br>
                             <span style="color: #666;">причина:</span> укладки без термозащиты, окрашивания<br>
                             <span style="color: var(--primary);">процедуры:</span> питательный кератин, ботокс в любой технике при t <span class="badge-temp">🔥 190–210°C</span>
@@ -2181,7 +2098,7 @@ body.edit-mode .img-control-bar,
                     </div>
 
                     <div class="card" style="padding: 2.2mm 3.5mm; margin-bottom: 1.8mm;">
-                        <div class="editable" >
+                        <div class="editable">
                             <strong>4</strong> — пористые волосы, сухие, непослушные, жесткие, тянутся в мокром виде, плохая эластичность.<br>
                             <span style="color: #666;">причина:</span> многократное окрашивание, обесцвечивание, завивка и выпрямление химическими составами<br>
                             <span style="color: var(--primary);">процедуры:</span> ботокс при t <span class="badge-temp">🔥 160–190°C</span>
@@ -2189,17 +2106,16 @@ body.edit-mode .img-control-bar,
                     </div>
 
                     <div class="card" style="padding: 2.2mm 3.5mm; margin-bottom: 1.8mm; background: #fffcf9; border-color: #eedec8;">
-                        <div class="editable" >
+                        <div class="editable">
                             <strong>5</strong> — очень ломкие, с очень плохой эластичностью, сухие, тусклые, пористые, в мокром виде рвутся.<br>
                             <span style="color: #666;">причина:</span> все вышеперечисленное, жесткие смывки<br>
-                            <span style="color: #a02020; font-weight: 600;">процедуры:</span> только <span class="badge-cold">❄️ Холодное восстановление</span> без термообработки
-                        </div>
+                            <span style="color: #a02020; font-weight: 600;">процедуры:</span> только <span class="badge-cold">❄️ Холодное восстановление</span>&nbsp;</div>
                     </div>
                 </div>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/damage_scale.jpg" alt="Степени повреждения волоса под электронным микроскопом" style="max-height: 52mm;">
+            <div class="diagram-container" data-default-src="assets/damage_scale.jpg" data-default-height="76">
+                <img src="assets/damage_scale.jpg" alt="Степени повреждения волоса под электронным микроскопом" style="max-height: 76mm; height: auto;">
                 <div class="diagram-caption editable">Состояние волоса и вид волоса под электронным микроскопом (степени 0 — 5)</div>
             </div>
         </div>
@@ -2226,11 +2142,9 @@ body.edit-mode .img-control-bar,
                         Выпрямление волос любой сложности, убирает пух и пористость волос, придает волосам красивый блеск и делает их здоровыми на вид.
                     </p>
                     <p class="editable" style=" margin-bottom:1.5mm;">
-                        <strong>Эффект от <span class="badge-time">⏱️ 3–5 месяцев</span>. Эффект накопительный.</strong><br>
+                        <strong>Эффект от <span class="badge-time">⏱️ 3–5 месяцев&nbsp;</span>Эффект накопительный.</strong><br>
                         Для работы требуется утюг с титановым/турмалиновым покрытием.<br>
-                        Окрашивание за <span class="badge-pill">7 дней до</span> процедуры и <span class="badge-pill">7 дней после</span>.<br>
-                        Домашний уход — строго профессиональный, содержащий в составе строго мягкие сульфаты.
-                    </p>
+                        Окрашивание за <span class="badge-pill">7 дней до</span> процедуры и <span class="badge-pill">7 дней после</span><br></p>
                     <p class="editable" style=" margin-bottom:0;">
                         Существует множество составов для кератинового выпрямления волос. В арсенале необходимо иметь хотя бы 2. Для поврежденных волос и для сильно кудрявых.
                     </p>
@@ -2242,35 +2156,41 @@ body.edit-mode .img-control-bar,
                     <div class="step-list" style="gap:1.8mm;">
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">1</div>
-                            <div class="step-text editable" >Вымыть волосы шампунем глубокой очистки (ШГО) 2-3 раза.</div>
+                            <div class="step-text editable">Вымыть волосы шампунем глубокой очистки (ШГО) 2-3 раза</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">2</div>
-                            <div class="step-text editable" >Высушить волосы на 100% без использования расчески</div>
+                            <div class="step-text editable">Высушить волосы на 60–80%</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">3</div>
-                            <div class="step-text editable" >Нанести состав без излишек на волосы, отступив 1 см от кожи головы</div>
+                            <div class="step-text editable">Нанести состав без излишек на волосы, отступив 1 см от кожи головы</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">4</div>
-                            <div class="step-text editable" >Прочесать волосы тщательно расческой с частыми зубьями, убрать излишки</div>
+                            <div class="step-text editable">Прочесать волосы тщательно расческой с частыми зубьями, убрать излишки</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">5</div>
-                            <div class="step-text editable" >Оставить действовать на <span class="badge-time">⏱️ 25–30 минут</span>. В зависимости толщины волоса, пористости и завитка.</div>
+                            <div class="step-text editable">Оставить действовать на <span class="badge-time">⏱️ 25–30 минут</span>&nbsp;без дополнительного тепла</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">6</div>
-                            <div class="step-text editable" >Высушить холодным/теплым воздухом на 100%</div>
+                            <div class="step-text editable">Высушить на 100%</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">7</div>
-                            <div class="step-text editable" >Разделить волосы на секции. Протяжка утюжком с титановым/турмалиновым покрытием тонких, прозрачных прядей. Температура <span class="badge-temp">🔥 210–230°C</span>, в зависимости от типа волос. Выпариваем до рассыпчатости.</div>
+                            <div class="step-text editable">Разделить волосы на секции. Протяжка утюжком с титановым/турмалиновым покрытием тонких, прозрачных прядей. Температура <span class="badge-temp">🔥 140–160°C</span>, в зависимости от типа волос.&nbsp;Прогреваем 5–7 раз</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">8</div>
-                            <div class="step-text editable" >Дать волосам остыть (<span class="badge-time">⏱️ 15 минут</span>). Промыть волосы с шампунем для домашнего ухода или без. Нанести маску на <span class="badge-time">⏱️ 5–10 минут</span>. Промыть водой. Нанести масло на кончики/термозащиту. Высушить горячим феном.</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Смыть состав</span></div>
+                        </div><div class="step-item" style="gap:2.5mm; align-items:flex-start;">
+                            <div class="step-number">9</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Нанести пленкообразователь/липидную подложку</span></div>
+                        </div><div class="step-item" style="gap:2.5mm; align-items:flex-start;">
+                            <div class="step-number">10</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Высушить с использованием брашинга</span></div>
                         </div>
                     </div>
                 </div>
@@ -2301,9 +2221,7 @@ body.edit-mode .img-control-bar,
                     <p class="editable" style=" margin-bottom:0;">
                         <strong>Эффект держится от <span class="badge-time">⏱️ 1–3 месяцев</span> в зависимости от техники процедуры.</strong><br>
                         Для работы требуется утюг с титановым/турмалиновым покрытием.<br>
-                        Окрашивание за <span class="badge-pill">7 дней до</span> процедуры и <span class="badge-pill">7 дней после</span>.<br>
-                        Домашний уход — строго профессиональный, содержащий в составе строго мягкие сульфаты.
-                    </p>
+                        Окрашивание за <span class="badge-pill">7 дней до</span> процедуры и <span class="badge-pill">7 дней после</span>.<br></p>
                 </div>
 
                 <div class="card" style="background:#fff; border-color:#eedec8; padding:3.5mm 4.5mm; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
@@ -2313,35 +2231,35 @@ body.edit-mode .img-control-bar,
                     <div class="step-list" style="gap:1.8mm;">
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">1</div>
-                            <div class="step-text editable" >Вымыть волосы шампунем глубокой очистки (ШГО) 2-3 раза.</div>
+                            <div class="step-text editable">Вымыть волосы шампунем глубокой очистки (ШГО) 2-3 раза</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">2</div>
-                            <div class="step-text editable" >Высушить волосы на 80% без использования расчески</div>
+                            <div class="step-text editable">Высушить волосы на 80% без использования расчески</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">3</div>
-                            <div class="step-text editable" >Нанести состав на волосы, отступив 1 см от кожи головы</div>
+                            <div class="step-text editable">Нанести состав на волосы, отступив 1 см от кожи головы</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">4</div>
-                            <div class="step-text editable" >Прочесать волосы тщательно расческой с частыми зубьями, убрать излишки</div>
+                            <div class="step-text editable">Прочесать волосы тщательно расческой с частыми зубьями, убрать излишки</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">5</div>
-                            <div class="step-text editable" >Оставить действовать на <span class="badge-time">⏱️ 25–30 минут</span> без дополнительного тепла.</div>
+                            <div class="step-text editable">Оставить действовать на <span class="badge-time">⏱️ 25–30 минут</span> без дополнительного тепла</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">6</div>
-                            <div class="step-text editable" >Высушить холодным/теплым воздухом на 100%</div>
+                            <div class="step-text editable">Высушить холодным/теплым воздухом на 100%</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">7</div>
-                            <div class="step-text editable" >Разделить волосы на секции. Протяжка утюжком с титановым/турмалиновым покрытием тонких, прозрачных прядей. Температура <span class="badge-temp">🔥 190°C</span>, в зависимости от типа волос. Выпариваем до рассыпчатости.</div>
+                            <div class="step-text editable">Разделить волосы на секции. Протяжка утюжком с титановым/турмалиновым покрытием тонких, прозрачных прядей. Температура <span class="badge-temp">🔥 190°C</span>, в зависимости от типа волос. Выпариваем до рассыпчатости.</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">8</div>
-                            <div class="step-text editable" >Дать волосам остыть (<span class="badge-time">⏱️ 15 минут</span>). Промыть волосы без использования шампуня. Нанести маску на <span class="badge-time">⏱️ 5–10 минут</span>. Промыть водой. Нанести масло на кончики/термозащиту. Высушить горячим феном.</div>
+                            <div class="step-text editable">Дать волосам остыть <span class="badge-time">⏱️ 15 минут</span>&nbsp;Промыть волосы без использования шампуня. Нанести маску на <span class="badge-time">⏱️ 5–10 минут</span>&nbsp;Промыть водой. Нанести масло на кончики/термозащиту. Высушить горячим феном</div>
                         </div>
                     </div>
                 </div>
@@ -2371,43 +2289,43 @@ body.edit-mode .img-control-bar,
                     <div class="step-list" style="gap:1.2mm;">
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">1</div>
-                            <div class="step-text editable" >Вымыть волосы шампунем глубокой очистки (ШГО) 2 раза.</div>
+                            <div class="step-text editable">Вымыть волосы шампунем глубокой очистки (ШГО) 2 раза</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">2</div>
-                            <div class="step-text editable" >Высушить волосы на 60-80% без использования расчески</div>
+                            <div class="step-text editable">Высушить волосы на 60-80% без использования расчески</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">3</div>
-                            <div class="step-text editable" >Нанести состав на волосы, отступив 1 см от кожи головы</div>
+                            <div class="step-text editable">Нанести состав на волосы, отступив 1 см от кожи головы</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">4</div>
-                            <div class="step-text editable" >Прочесать волосы тщательно расческой с частыми зубьями, убрать излишки</div>
+                            <div class="step-text editable">Прочесать волосы тщательно расческой с частыми зубьями, убрать излишки</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">5</div>
-                            <div class="step-text editable" >Оставить действовать на <span class="badge-time">⏱️ 25–30 минут</span> без дополнительного тепла.</div>
+                            <div class="step-text editable">Оставить действовать на <span class="badge-time">⏱️ 25–30 минут</span> без дополнительного тепла.</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">6</div>
-                            <div class="step-text editable" >Высушить холодным/теплым воздухом на 100%</div>
+                            <div class="step-text editable">Высушить холодным/теплым воздухом на 100%</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">7</div>
-                            <div class="step-text editable" >Разделить волосы на секции. Протяжка утюжком с титановым/турмалиновым покрытием тонких, прозрачных прядей. Температура <span class="badge-temp">🔥 140–160°C</span>, в зависимости от типа волос. Прогреваем 5-7 раз.</div>
+                            <div class="step-text editable">Разделить волосы на секции. Протяжка утюжком с титановым/турмалиновым покрытием тонких, прозрачных прядей. Температура <span class="badge-temp">🔥 140–160°C</span>, в зависимости от типа волос. Прогреваем 5-7 раз.</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">8</div>
-                            <div class="step-text editable" >Смыть состав.</div>
+                            <div class="step-text editable">Смыть состав.</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">9</div>
-                            <div class="step-text editable" >Нанести пленкообразователь/липидную подложку.</div>
+                            <div class="step-text editable">Нанести пленкообразователь/липидную подложку.</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">10</div>
-                            <div class="step-text editable" >Высушить с использованием брашинга</div>
+                            <div class="step-text editable">Высушить с использованием брашинга</div>
                         </div>
                     </div>
                 </div>
@@ -2417,39 +2335,39 @@ body.edit-mode .img-control-bar,
                     <div class="step-list" style="gap:1.2mm;">
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">1</div>
-                            <div class="step-text editable" >Вымыть волосы шампунем глубокой очистки (ШГО) 2 раза.</div>
+                            <div class="step-text editable">Вымыть волосы шампунем глубокой очистки (ШГО) 2 раза.</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">2</div>
-                            <div class="step-text editable" >Высушить волосы на 60-80% без использования расчески</div>
+                            <div class="step-text editable">Высушить волосы на 60-80% без использования расчески</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">3</div>
-                            <div class="step-text editable" >Нанести состав на волосы, с излишками отступив 1 см от кожи головы</div>
+                            <div class="step-text editable">Нанести состав на волосы, с излишками отступив 1 см от кожи головы</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">4</div>
-                            <div class="step-text editable" >Оставить действовать на <span class="badge-time">⏱️ 25–30 минут</span> без дополнительного тепла.</div>
+                            <div class="step-text editable">Оставить действовать на <span class="badge-time">⏱️ 25–30 минут</span> без дополнительного тепла.</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">5</div>
-                            <div class="step-text editable" >Подсмыть состав (от уха до уха, <span class="badge-time">⏱️ 30–60 секунд</span>)</div>
+                            <div class="step-text editable">Подсмыть состав (от уха до уха, <span class="badge-time">⏱️ 30–60 секунд</span>)</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">6</div>
-                            <div class="step-text editable" >Высушить холодным/теплым воздухом на 100%</div>
+                            <div class="step-text editable">Высушить холодным/теплым воздухом на 100%</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">7</div>
-                            <div class="step-text editable" >Разделить волосы на секции. Протяжка утюжком с титановым/турмалиновым покрытием тонких, прозрачных прядей. Температура <span class="badge-temp">🔥 140–160°C</span>, в зависимости от типа волос. Прогреваем 5-7 раз.</div>
+                            <div class="step-text editable">Разделить волосы на секции. Протяжка утюжком с титановым/турмалиновым покрытием тонких, прозрачных прядей. Температура <span class="badge-temp">🔥 140–160°C</span>, в зависимости от типа волос. Прогреваем 5-7 раз.</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">8</div>
-                            <div class="step-text editable" >Смыть через сутки (<span class="badge-time">⏱️ через 24 часа</span>) тёплой водой</div>
+                            <div class="step-text editable">Смыть через сутки (<span class="badge-time">⏱️ через 24 часа</span>) тёплой водой</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">9</div>
-                            <div class="step-text editable" >Высушить феном на 100% с использованием брашинга</div>
+                            <div class="step-text editable">Высушить феном на 100% с использованием брашинга</div>
                         </div>
                     </div>
                 </div>
@@ -2491,32 +2409,54 @@ body.edit-mode .img-control-bar,
                     <div class="step-list" style="gap:1.2mm;">
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">1</div>
-                            <div class="step-text editable" >Наносим на сухой волос обильно НАНОПЛАСТИКУ</div>
+                            <div class="step-text editable">Вымыть волосы шампунем глубокой очистки 1–2 раза, в зависимости от степени загрязнения и типа волос</div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">2</div>
-                            <div class="step-text editable" >Выдерживаем от <span class="badge-time">⏱️ 40 до 90 минут</span></div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Высушить волосы на 80–100%</span></div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">3</div>
-                            <div class="step-text editable" >Смываем на 100%!!! <span class="badge-time">⏱️ 5–10 минут</span>!!!</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Разделить волосы на секции</span></div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">4</div>
-                            <div class="step-text editable" >Проходим по тонким прядкам на <span class="badge-temp">🔥 высоких температурах</span> медленнее чем при работе с кератином и ботоксом, до полной рассыпчатости (как правило не более 8 раз)</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Нанести состав, отступив 1–1,5 см от кожи головы. Равномерно распределить по всей длине</span></div>
                         </div>
                         <div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">5</div>
-                            <div class="step-text editable" >Далее смываем</div>
+                            <div class="step-text editable">Оставить состав на волосах на 40–60 минут. Время выдержки подбирается индивидуально в зависимости от плотности, завитка и состояния волос</div>
                         </div>
-                        <div class="step-item" style="gap:2.2mm; background:#fff8f6; padding:1.2mm 2mm; border-left:3px solid #e17055; border-radius:3px;">
-                            <div class="step-number" style="width:18px; height:18px; background:#e17055;">6</div>
-                            <div class="step-text editable" >Теперь основной пункт о котором все молчат: так как НАНОПЛАСТИКА — это кислота, то она забрала всю влагу из волоса и он стал кристальным, поэтому необходимо добавить аминокислоты!! Это обязательно! Иначе пересушите волос.</div>
-                        </div>
+                        
                         <div class="step-item" style="gap:2.2mm;">
+                            <div class="step-number" style="width:18px; height:18px; ">6</div>
+                            <div class="step-text editable">Смыть состав водой частично или полностью — согласно протоколу конкретного состава</div>
+                        </div><div class="step-item" style="gap:2.2mm;">
                             <div class="step-number" style="width:18px; height:18px; ">7</div>
-                            <div class="step-text editable" >PRODEW 500 — идеально подойдет, DR. Therapy sos тоже подойдет, наносим по протоколу, смываем, сушим</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Высушить волосы на 100%</span></div>
+                        </div><div class="step-item" style="gap:2.2mm;">
+                            <div class="step-number" style="width:18px; height:18px; ">8</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Разделить волосы на секции. Выделять тонкие прозрачные пряди и тщательно прорабатывать утюжком</span></div>
+                        </div><div class="step-item" style="gap:2.2mm;">
+                            <div class="step-number" style="width:18px; height:18px; ">9</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Температуру и количество протяжек подбирать после диагностики волос. Ориентировочно 180–230°C, 7–15 протяжек. На концах и более поврежденных участках снижать температуру и количество протяжек</span></div>
+                        </div><div class="step-item" style="gap:2.2mm;">
+                            <div class="step-number" style="width:18px; height:18px; ">10</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Дать волосам полностью остыть</span></div>
+                        </div><div class="step-item" style="gap:2.2mm;">
+                            <div class="step-number" style="width:18px; height:18px; ">11</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Смыть шампунем для домашнего использования . Нанести стабилизирующую/завершающую маску на 5–10 минут</span></div>
+                        </div><div class="step-item" style="gap:2.2mm;">
+                            <div class="step-number" style="width:18px; height:18px; ">12</div>
+                            <div class="step-text editable"><span style="font-size: 13.3333px;">Смыть маску и выполнить финальную сушку</span></div>
                         </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-gold" style="margin-top: 4mm;">
+                    <div class="callout-icon">💡</div>
+                    <div class="callout-body editable">
+                        <strong>Важно:</strong> нанопластику не выполнять на сильно поврежденных и осветленных волосах. Перед процедурой обязательны диагностика и тест-прядь. Температура, выдержка и количество протяжек определяются не по одному шаблону, а под конкретное полотно волос и конкретный состав.
                     </div>
                 </div>
             </div>
@@ -2674,7 +2614,7 @@ body.edit-mode .img-control-bar,
                     <ul class="bullet-list editable" style="margin-bottom:0; ">
                         <li>моем голову ШГО</li>
                         <li>сушим на 60%</li>
-                        <li>наносим любой концентрированный ботокс обильно (я использую массажную расческу — наношу сначала на расческу и распределяю по волосам)</li>
+                        <li>наносим любой концентрированный ботокс обильно</li>
                         <li>выдерживаем <span class="badge-time">⏱️ 25–30 минут</span></li>
                         <li>сушим феном на 100%</li>
                         <li>проходим по широким прядкам на <span class="badge-temp">🔥 160–190°C</span> в зависимости от состояния волос</li>
@@ -2691,8 +2631,7 @@ body.edit-mode .img-control-bar,
                     <div style="background:#fcfaf5; padding:2.5mm 3.5mm; border-radius:5px; border:1px solid #eedec8; margin-bottom:2mm;">
                         <div style="font-weight:700; color:var(--primary); margin-bottom:1mm;">1) FELPS RP (всего 2 этапа: 1 — уплотнит волос, 2 — увлажнит)</div>
                         <p class="editable" style=" margin-bottom:0;">
-                            Наносим 1 обильно на влажные волосы, отжатые полотенцем на <span class="badge-time">⏱️ 20 минут</span>, далее не смываем и поверх наносим 2 этап тоже на <span class="badge-time">⏱️ 20 минут</span>. Смываем. Я наношу еще или липидную подложку от IQ HAIR, или крем кератин от NOVEX, или жидкий ботокс от YKAS. Сушим на браш или сушим и потом проходим по толстым прядкам на <span class="badge-temp">🔥 160–180°C</span>.
-                        </p>
+                            На влажные, хорошо отжатые полотенцем волосы обильно наносим 1 этап FELPS RP и оставляем на&nbsp;<span class="badge-time">⏱️ 20 минут</span><br>Не смывая первый этап, поверх наносим 2 этап FELPS RP ещё на&nbsp;<span class="badge-time">⏱️ 20 минут</span>.&nbsp;После выдержки смываем.<br><span style="font-size: 13.3333px;">Далее смешиваем в равных пропорциях FELPS Massa + FELPS Banho de Verniz (холодный + горячий ботокс).<br></span></p><div><span style="font-size: 10pt; font-family: Inter, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;">Наносим смесь на волосы и выдерживаем</span><span style="font-size: 10pt; font-family: Inter, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;">&nbsp;</span><span class="badge-time" style="background-color: rgba(214, 180, 117, 0.09);">⏱️ 15 минут<br></span><br><span style="font-size: 13.3333px;">После выдержки подсмываем состав на 50–70%.</span></div>Высушиваем волосы на брашинг либо полностью высушиваем феном, после чего проходим утюжком по толстым прядям при температуре&nbsp;<span class="badge-temp">🔥 160–180°C</span><p></p>
                     </div>
 
                     <div style="background:#fcfaf5; padding:2.5mm 3.5mm; border-radius:5px; border:1px solid #eedec8;">
@@ -2730,31 +2669,31 @@ body.edit-mode .img-control-bar,
                     <div class="step-list" style="gap:2mm;">
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">1</div>
-                            <div class="step-text editable" >На влажные отжатые полотенцем волосы наносим обильно кислую подложку от IQ HAIR (nano 3D). Эмульгируем состав, пока он выдерживается <span class="badge-time">⏱️ 20 минут</span></div>
+                            <div class="step-text editable">На влажные отжатые полотенцем волосы наносим обильно кислую подложку от IQ HAIR (nano 3D). Эмульгируем состав, пока он выдерживается <span class="badge-time">⏱️ 20 минут</span></div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">2</div>
-                            <div class="step-text editable" >Затем смываем на 100%</div>
+                            <div class="step-text editable">Затем смываем на 100%</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">3</div>
-                            <div class="step-text editable" >Далее по такому же принципу наносим аминокислотную подложку (беру или 2 этап от RP или DR.THERAPY SOS). На <span class="badge-time">⏱️ 20 минут</span>, можно под термошапку</div>
+                            <div class="step-text editable">Далее по такому же принципу наносим аминокислотную подложку (беру или 2 этап от RP или DR.THERAPY SOS). На <span class="badge-time">⏱️ 20 минут</span>, можно под термошапку</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">4</div>
-                            <div class="step-text editable" >Смываем и наносим обильно протеиновую подложку от IQ HAIR, выдерживаем <span class="badge-time">⏱️ 15 минут</span></div>
+                            <div class="step-text editable">Смываем и наносим обильно протеиновую подложку от IQ HAIR, выдерживаем <span class="badge-time">⏱️ 15 минут</span></div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">5</div>
-                            <div class="step-text editable" >Не смываем и наносим липидную подложку от IQ HAIR</div>
+                            <div class="step-text editable">Не смываем и наносим липидную подложку от IQ HAIR</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">6</div>
-                            <div class="step-text editable" >Наносим любой пленкообразователь из предыдущих примеров</div>
+                            <div class="step-text editable">Наносим любой пленкообразователь из предыдущих примеров</div>
                         </div>
                         <div class="step-item" style="gap:2.5mm; align-items:flex-start;">
                             <div class="step-number">7</div>
-                            <div class="step-text editable" >Сушим на 100% на браш или сушим и проходим по широким прядкам на <span class="badge-temp">🔥 140–160°C</span></div>
+                            <div class="step-text editable">Сушим на 100% на браш или сушим и проходим по широким прядкам на <span class="badge-temp">🔥 140–160°C</span></div>
                         </div>
                     </div>
                 </div>
@@ -2849,19 +2788,19 @@ body.edit-mode .img-control-bar,
                     <div class="step-list" style="gap:2mm;">
                         <div class="card" style="border-left:4px solid #00b894; padding:3mm 4mm; margin-bottom:0;">
                             <div style="font-weight:700; color:#00b894; margin-bottom:1mm;">1. Кислая</div>
-                            <div class="editable" >Склеивает поврежденные участки, восстанавливает эластичность волоса</div>
+                            <div class="editable">Склеивает поврежденные участки, восстанавливает эластичность волоса</div>
                         </div>
                         <div class="card" style="border-left:4px solid #0984e3; padding:3mm 4mm; margin-bottom:0;">
                             <div style="font-weight:700; color:#0984e3; margin-bottom:1mm;">2. Аминокислотная</div>
-                            <div class="editable" >Увлажняет волос изнутри</div>
+                            <div class="editable">Увлажняет волос изнутри</div>
                         </div>
                         <div class="card" style="border-left:4px solid #6c5ce7; padding:3mm 4mm; margin-bottom:0;">
                             <div style="font-weight:700; color:#6c5ce7; margin-bottom:1mm;">3. Протеиновые</div>
-                            <div class="editable" >Заполняет пустоты, создавая спасательный каркас, за который в последствии крепится полимер + дает отличное питание волосам</div>
+                            <div class="editable">Заполняет пустоты, создавая спасательный каркас, за который в последствии крепится полимер + дает отличное питание волосам</div>
                         </div>
                         <div class="card" style="border-left:4px solid #e17055; padding:3mm 4mm; margin-bottom:0;">
                             <div style="font-weight:700; color:#e17055; margin-bottom:1mm;">4. Липидные</div>
-                            <div class="editable" >Работают в кутикуле, создают пленку, имитируя природный гидро-липидный слой</div>
+                            <div class="editable">Работают в кутикуле, создают пленку, имитируя природный гидро-липидный слой</div>
                         </div>
                     </div>
                 </div>
@@ -2890,29 +2829,29 @@ body.edit-mode .img-control-bar,
                 <div class="card" style="padding:3.5mm 5mm; margin-bottom:3mm;">
                     <div class="card-title" style="margin-bottom:2mm;"><span class="dot"></span> ТЕХНИКА:</div>
                     <div class="step-list" style="gap:1.6mm;">
-                        <div class="step-item"><div class="step-number">1</div><div class="step-text editable" >Моем волосы ШГО</div></div>
-                        <div class="step-item"><div class="step-number">2</div><div class="step-text editable" >Отжимаем волосы полотенцем, удаляем лишнюю влагу (можно подсушить феном).</div></div>
-                        <div class="step-item"><div class="step-number">3</div><div class="step-text editable" >Наносим подложку на те зоны, где она необходима.</div></div>
-                        <div class="step-item"><div class="step-number">4</div><div class="step-text editable" >Выдерживаем состав на волосах в среднем <span class="badge-time">⏱️ 15–25 минут</span>.</div></div>
-                        <div class="step-item"><div class="step-number">5</div><div class="step-text editable" >Далее смываем его на 100%.</div></div>
-                        <div class="step-item"><div class="step-number">6</div><div class="step-text editable" >Дальше все по протоколу — сушим волосы на 70-100% в зависимости от процедуры, которую собираетесь делать, наносите состав, работаете по технологии.</div></div>
+                        <div class="step-item"><div class="step-number">1</div><div class="step-text editable">Моем волосы ШГО</div></div>
+                        <div class="step-item"><div class="step-number">2</div><div class="step-text editable">Отжимаем волосы полотенцем, удаляем лишнюю влагу (можно подсушить феном).</div></div>
+                        <div class="step-item"><div class="step-number">3</div><div class="step-text editable">Наносим подложку на те зоны, где она необходима.</div></div>
+                        <div class="step-item"><div class="step-number">4</div><div class="step-text editable">Выдерживаем состав на волосах в среднем <span class="badge-time">⏱️ 15–25 минут</span>.</div></div>
+                        <div class="step-item"><div class="step-number">5</div><div class="step-text editable">Далее смываем его на 100%.</div></div>
+                        <div class="step-item"><div class="step-number">6</div><div class="step-text editable">Дальше все по протоколу — сушим волосы на 70-100% в зависимости от процедуры, которую собираетесь делать, наносите состав, работаете по технологии.</div></div>
                     </div>
                 </div>
 
                 <div class="card" style="background:#fffcf8; border-color:#eedec8; padding:3.5mm 5mm; margin-bottom:3mm;">
                     <div class="card-title" style="margin-bottom:2mm;"><span class="dot"></span> КАЖДАЯ ИЗ ПОДЛОЖЕК ИМЕЕТ СВОЮ ОСОБЕННОСТЬ:</div>
-                    <div class="editable" >
+                    <div class="editable">
                         <strong>Например:</strong><br>
-                        1. Кислая подложка, склеивая волос изнутри, вбирает в себя всю влагу и тем самым волос становится обезвоженный, отсюда следует, что необходимо восполнить влагу при помощи аминокислотной подложки.<br>
-                        2. Затем уже наносим протеиновую подложку для укрепления волоса и создания безопасного фундамента.<br>
-                        3. И последним этапом идёт липидная подложка, которая прекрасно имитирует наш природный гидро-липидный слой.
+                        1. Кислая подложка, склеивая волос изнутри, вбирает в себя всю влагу, и тем самым волос становится обезвоженным. Отсюда следует, что необходимо восполнить влагу при помощи аминокислотной подложки.<br>
+                        2. Затем наносим протеиновую подложку для укрепления волоса и создания безопасного фундамента.<br>
+                        3. И последним этапом идёт липидная подложка, которая помогает восполнить недостаток липидов, имитируя естественный защитный слой волоса. Она сглаживает и уплотняет кутикулу, уменьшает её проницаемость, помогает удерживать влагу внутри волоса, придаёт ему эластичность, мягкость и блеск, а также создаёт защитный барьер на поверхности.
                     </div>
                 </div>
             </div>
 
             <div class="callout callout-gold" style="margin-top:auto; padding:3.5mm 5mm;">
                 <div class="callout-icon">💡</div>
-                <div class="callout-body editable" >
+                <div class="callout-body editable">
                     <strong>НО ЕСЛИ ПЛАНИРУЕТСЯ ГОРЯЧАЯ ПРОЦЕДУРА:</strong> то липидную подложку мы не наносим, так как это не имеет смысла!<br>
                     Также хочу подметить, что если волос не сильно поврежден, а только лишь ослаблен, то можно воспользоваться <strong>только протеиновой подложкой</strong>.
                 </div>
@@ -2952,20 +2891,14 @@ body.edit-mode .img-control-bar,
                     <div class="card" style="padding:3.5mm 4.5mm;">
                         <div class="card-title" style="margin-bottom:1.5mm;"><span class="dot"></span> ВРЕМЕННЫЕ:</div>
                         <p class="editable" style=" margin-bottom:0;">
-                            Те, которые применяются в определенные моменты. К ним относится вся качественная, профессиональная защита (включая масла) от перегрева при использовании горячей укладки феном, щипцами, утюгами и сушки волос, а также средства, защищающие от негативного солнечного воздействия.
+                            Те, которые применяются в определенные моменты. К ним относится вся качественная профессиональная защита от перегрева при использовании горячей укладки феном, щипцами, утюгами и сушки волос, а также средства, защищающие от негативного солнечного воздействия.
                         </p>
                     </div>
                 </div>
 
                 <div class="card" style="background:#fffcf8; border-color:#eedec8; padding:3.5mm 5mm;">
-                    <p class="editable" style=" margin-bottom:2mm;">
-                        В эти моменты волосы испытывают нагрузки, что напрямую влияет на их состояние: сухость, сплющивание, жжение.<br>
-                        Для предотвращения этих процессов на волосы наносится специальный состав, который не дает волосу нарушить водный баланс. Утюг, проходя по волосам, приглаживает чешуйки, делая укладку блестящей и абсолютно прямой. Без протектора температура воздействует на корковый слой, как следствие волос становится тонкий, хрупкий, сухой.
-                    </p>
-                    <p class="editable" style=" margin-bottom:0;">
-                        При нанесении защиты она выступает амортизатором, окутывая весь волос по периметру и испаряясь частично.<br>
-                        Хороший протектор несмываемый, то есть жидкая фракция испаряется, а полезные и скрепляющие вещества остаются.
-                    </p>
+                    <p class="editable" style=" margin-bottom:2mm;"></p><div><span style="font-size: 13.3333px;">В эти моменты волосы испытывают нагрузки, что напрямую влияет на их состояние: сухость, сплющивание, жжение.</span></div><div><span style="font-family: Inter, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;">Для предотвращения этих процессов на волосы наносится специальный состав, который не дает волосу нарушить водный баланс. Утюг, проходя по волосам, приглаживает чешуйки, делая укладку блестящей и абсолютно прямой. Без протектора температура воздействует на корковый слой, как следствие волос становится тонкий, хрупкий, сухой.</span></div><p></p>
+                    <p class="editable" style=" margin-bottom:0;"></p><div><span style="font-size: 13.3333px;">При нанесении защиты она выступает амортизатором, окутывая весь волос по периметру и испаряясь частично.</span></div><div><span style="font-family: Inter, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;">Хороший протектор несмываемый, то есть жидкая фракция испаряется, а полезные и защитные компоненты остаются на поверхности волоса, образуя тонкую защитную плёнку. Она снижает потерю влаги, уменьшает трение и помогает защитить кутикулу от повреждения при воздействии высокой температуры.</span></div><p></p>
                 </div>
             </div>
         </div>
@@ -2990,8 +2923,8 @@ body.edit-mode .img-control-bar,
                 </div>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/scalp_anatomy.jpg" alt="Физиология кожи головы" style="max-height: 68mm;">
+            <div class="diagram-container" data-default-src="assets/scalp_anatomy.jpg" data-default-height="120">
+                <img src="assets/scalp_anatomy.jpg" alt="Физиология кожи головы" style="max-height: 120mm; height: auto;">
                 <div class="diagram-caption editable">Строение кожи головы: сальная и потовая железы, фолликул, капилляры и слои кожи</div>
             </div>
 
@@ -3037,8 +2970,8 @@ body.edit-mode .img-control-bar,
                 </div>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/shampoo_bottles.jpg" alt="Профессиональные шампуни по типам кожи" style="max-height: 65mm;">
+            <div class="diagram-container" data-default-src="assets/shampoo_bottles.jpg" data-default-height="109">
+                <img src="assets/shampoo_bottles.jpg" alt="Профессиональные шампуни по типам кожи" style="max-height: 109mm; height: auto;">
                 <div class="diagram-caption editable">Подбор специализированных шампуней: сульфатные, бессульфатные и себорегулирующие</div>
             </div>
 
@@ -3054,7 +2987,7 @@ body.edit-mode .img-control-bar,
 
                 <div class="callout callout-gold">
                     <div class="callout-icon">💡</div>
-                    <div class="callout-body editable" >
+                    <div class="callout-body editable">
                         * Каждый тип кожи головы может быть ещё и <strong>чувствительным</strong>.
                     </div>
                 </div>
@@ -3134,8 +3067,8 @@ body.edit-mode .img-control-bar,
                 </div>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/trichoscope_usage.jpg" alt="Диагностика трихоскопом" style="max-height: 68mm;">
+            <div class="diagram-container" data-default-src="assets/trichoscope_usage.jpg" data-default-height="116">
+                <img src="assets/trichoscope_usage.jpg" alt="Диагностика трихоскопом" style="max-height: 116mm; height: auto;">
                 <div class="diagram-caption editable">Трихоскопическая видеокамера с увеличением и вывод микроизображения на экраны гаджетов</div>
             </div>
 
@@ -3177,8 +3110,8 @@ body.edit-mode .img-control-bar,
                 </p>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/skin_layers.jpg" alt="Слои эпидермиса и деление клеток" style="max-height: 68mm;">
+            <div class="diagram-container" data-default-src="assets/skin_layers.jpg" data-default-height="130">
+                <img src="assets/skin_layers.jpg" alt="Слои эпидермиса и деление клеток" style="max-height: 130mm; height: auto;">
                 <div class="diagram-caption editable">Дифференцировка кератиноцитов от базального слоя до ороговевших мертвых чешуек</div>
             </div>
 
@@ -3214,8 +3147,8 @@ body.edit-mode .img-control-bar,
                 </p>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/dandruff_types.jpg" alt="Виды перхоти и шелушения" style="max-height: 60mm;">
+            <div class="diagram-container" data-default-src="assets/dandruff_types.jpg" data-default-height="96">
+                <img src="assets/dandruff_types.jpg" alt="Виды перхоти и шелушения" style="max-height: 96mm; height: auto;">
                 <div class="diagram-caption editable">Визуальные проявления различных форм шелушения в прикорневой зоне волос</div>
             </div>
 
@@ -3360,8 +3293,8 @@ body.edit-mode .img-control-bar,
                 </div>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/seborrhea_trichoscope.jpg" alt="Себорея и дерматит под трихоскопом" style="max-height: 72mm;">
+            <div class="diagram-container" data-default-src="assets/seborrhea_trichoscope.jpg" data-default-height="84">
+                <img src="assets/seborrhea_trichoscope.jpg" alt="Себорея и дерматит под трихоскопом" style="max-height: 84mm; height: auto;">
                 <div class="diagram-caption editable">Себорея под трихоскопом и себорейный дерматит под трихоскопом</div>
             </div>
 
@@ -3403,42 +3336,42 @@ body.edit-mode .img-control-bar,
             <div class="step-list" style="gap:2mm;">
                 <div class="step-item card" style="padding:2.8mm 4mm; margin-bottom:0; display:flex; gap:3mm; align-items:flex-start;">
                     <div class="step-number" style="min-width:20px; width:20px; height:20px; ">1</div>
-                    <div class="step-text editable" >
+                    <div class="step-text editable">
                         Исключить салонные пилинги / шампуни пилинги / домашние пилинги / шампуни из масс-маркета
                     </div>
                 </div>
 
                 <div class="step-item card" style="padding:2.8mm 4mm; margin-bottom:0; display:flex; gap:3mm; align-items:flex-start;">
                     <div class="step-number" style="min-width:20px; width:20px; height:20px; ">2</div>
-                    <div class="step-text editable" >
+                    <div class="step-text editable">
                         Следить за гигиеной кожи головы. Всегда мыть кожу по мере её загрязнения
                     </div>
                 </div>
 
                 <div class="step-item card" style="padding:2.8mm 4mm; margin-bottom:0; display:flex; gap:3mm; align-items:flex-start;">
                     <div class="step-number" style="min-width:20px; width:20px; height:20px; ">3</div>
-                    <div class="step-text editable" >
+                    <div class="step-text editable">
                         Исключить из рациона питания жирное жареное и сладкое (включая газировки)
                     </div>
                 </div>
 
                 <div class="step-item card" style="padding:2.8mm 4mm; margin-bottom:0; display:flex; gap:3mm; align-items:flex-start;">
                     <div class="step-number" style="min-width:20px; width:20px; height:20px; ">4</div>
-                    <div class="step-text editable" >
+                    <div class="step-text editable">
                         Дать организму здоровый сон <span class="badge-time">⏱️ с 22:00 до 4:00</span>
                     </div>
                 </div>
 
                 <div class="step-item card" style="padding:2.8mm 4mm; margin-bottom:0; display:flex; gap:3mm; align-items:flex-start;">
                     <div class="step-number" style="min-width:20px; width:20px; height:20px; ">5</div>
-                    <div class="step-text editable" >
+                    <div class="step-text editable">
                         Если есть тревожность, стрессовое состояние, обратиться к врачу для назначения медикаментозных препаратов внутрь
                     </div>
                 </div>
 
                 <div class="step-item card" style="padding:2.8mm 4mm; margin-bottom:0; display:flex; gap:3mm; align-items:flex-start;">
                     <div class="step-number" style="min-width:20px; width:20px; height:20px; ">6</div>
-                    <div class="step-text editable" >
+                    <div class="step-text editable">
                         Внешнее лечение: шампунь лечебный / шампунь от Happy Hair<br>
                         — при жирной себорее <span class="badge-pill">Happy Hair KST</span><br>
                         — при сухой себорее — <span class="badge-pill">HH SOS</span> + использование противозудных и противогрибковых мазей/лосьонов
@@ -3447,7 +3380,7 @@ body.edit-mode .img-control-bar,
 
                 <div class="step-item card" style="padding:2.8mm 4mm; margin-bottom:0; display:flex; gap:3mm; align-items:flex-start;">
                     <div class="step-number" style="min-width:20px; width:20px; height:20px; ">7</div>
-                    <div class="step-text editable" >
+                    <div class="step-text editable">
                         Обратиться к врачу дерматологу
                     </div>
                 </div>
@@ -3482,8 +3415,8 @@ body.edit-mode .img-control-bar,
                 </div>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/hair_growth_cycle.jpg" alt="Фазы роста волос" style="max-height: 65mm;">
+            <div class="diagram-container" data-default-src="assets/hair_growth_cycle.jpg" data-default-height="97">
+                <img src="assets/hair_growth_cycle.jpg" alt="Фазы роста волос" style="max-height: 97mm; height: auto;">
                 <div class="diagram-caption editable">Фазы роста волос: Анаген, Катаген, Телоген</div>
             </div>
 
@@ -3537,8 +3470,8 @@ body.edit-mode .img-control-bar,
                 </div>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/hair_shedding_brush.jpg" alt="Волосы на расческе норма" style="max-height: 58mm;">
+            <div class="diagram-container" data-default-src="assets/hair_shedding_brush.jpg" data-default-height="106">
+                <img src="assets/hair_shedding_brush.jpg" alt="Волосы на расческе норма" style="max-height: 106mm; height: auto;">
                 <div class="diagram-caption editable">Физиологическая смена телогеновых волос при ежедневном расчесывании и мытье</div>
             </div>
 
@@ -3573,8 +3506,8 @@ body.edit-mode .img-control-bar,
                 </div>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/hair_loss_stress.jpg" alt="Выпадение волос от стресса" style="max-height: 60mm;">
+            <div class="diagram-container" data-default-src="assets/hair_loss_stress.jpg" data-default-height="104">
+                <img src="assets/hair_loss_stress.jpg" alt="Выпадение волос от стресса" style="max-height: 104mm; height: auto;">
                 <div class="diagram-caption editable">Факторы патологического выпадения волос</div>
             </div>
 
@@ -3609,8 +3542,8 @@ body.edit-mode .img-control-bar,
                 </div>
             </div>
 
-            <div class="diagram-container">
-                <img src="assets/alopecia_types.jpg" alt="Виды алопеции: АГА и гнездная" style="max-height: 72mm;">
+            <div class="diagram-container" data-default-src="assets/alopecia_types.jpg" data-default-height="130">
+                <img src="assets/alopecia_types.jpg" alt="Виды алопеции: АГА и гнездная" style="max-height: 126mm; height: auto;">
                 <div class="diagram-caption editable">Виды алопеции: андрогенетическая (АГА) и очаговая (гнездная)</div>
             </div>
 
@@ -3806,19 +3739,19 @@ body.edit-mode .img-control-bar,
                 <div class="step-list" style="gap:2mm; margin-bottom:3mm;">
                     <div class="step-item">
                         <div class="step-number">1</div>
-                        <div class="step-text editable" >
+                        <div class="step-text editable">
                             Нанесите на кожу головы пилинг от Happy Hair, по проборам. Постепенно проходя пальчиками массирующими движениями, до появления отшелушивающихся частиц.
                         </div>
                     </div>
                     <div class="step-item">
                         <div class="step-number">2</div>
-                        <div class="step-text editable" >
+                        <div class="step-text editable">
                             Выдержите пилинг <span class="badge-time">⏱️ до 3 минут</span>. Если чувствуете покалывание или жжение, необходимо смыть раньше.
                         </div>
                     </div>
                     <div class="step-item">
                         <div class="step-number">3</div>
-                        <div class="step-text editable" >
+                        <div class="step-text editable">
                             Хорошо промойте кожу головы сначала просто водой, тщательно массируя, затем с шампунем.
                         </div>
                     </div>
@@ -3827,7 +3760,7 @@ body.edit-mode .img-control-bar,
 
             <div class="callout callout-gold" style="margin-top:auto;">
                 <div class="callout-icon">💡</div>
-                <div class="callout-body editable" >
+                <div class="callout-body editable">
                     При необходимости повторяйте процесс <span class="badge-time">⏱️ раз в 2–4 недели</span> до состояния полного очищения кожи. Затем для профилактики <span class="badge-time">⏱️ раз в месяц</span>.
                 </div>
             </div>
@@ -3914,7 +3847,7 @@ body.edit-mode .img-control-bar,
         </div>
     </div>
     
-    </main>
+    </main><strong>
 
     <!-- ================= JAVASCRIPT ================= -->
     <script>
@@ -3925,6 +3858,8 @@ let currentZoom = 100;
 let activeImageContainer = null;
 
 document.addEventListener('DOMContentLoaded', () => {
+    initBlockControls();
+
     // Automatically enable Mobile Mode if opened on a small screen
     if (window.innerWidth <= 800) {
         document.body.classList.add('mobile-mode');
@@ -3945,7 +3880,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(printStyle);
 
     // 1. Version check: automatically invalidate outdated LocalStorage snapshot if codebase updated
-    const CURRENT_DOC_VERSION = 'v2026_10_02_authentic_v23';
+    const CURRENT_DOC_VERSION = 'v2026_10_03_authentic_v25';
     try {
         const savedVersion = localStorage.getItem('metodichka_doc_version');
         if (savedVersion !== CURRENT_DOC_VERSION) {
@@ -4304,6 +4239,61 @@ function toggleEditMode() {
 }
 
 // ---------------- SAVE HTML DOCUMENT (EDITS & PHOTO SIZES) ----------------
+
+async function saveStudentHtml() {
+    const wasEditMode = isEditMode;
+    if (isEditMode) toggleEditMode();
+
+    const clone = document.documentElement.cloneNode(true);
+
+    // Remove all UI elements
+    clone.querySelectorAll('.toolbar-wrap, .img-control-bar, .modal-overlay, #imageFileInput, #blockSpacerWidget, .block-spacer-widget, .block-spacer-indicator, .toast-msg').forEach(el => el.remove());
+    clone.querySelectorAll('.drag-over, .block-spacing-hover, .block-spacing-selected').forEach(el => el.classList.remove('drag-over', 'block-spacing-hover', 'block-spacing-selected'));
+    clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+
+    // Remove top padding from document-container since there is no toolbar
+    const docContainer = clone.querySelector('.document-container');
+    if (docContainer) {
+        docContainer.style.paddingTop = '20px';
+    }
+
+    const htmlString = '<!DOCTYPE html>\n' + clone.outerHTML;
+
+    // Try File System Access API
+    if (window.showSaveFilePicker) {
+        try {
+            const handle = await window.showSaveFilePicker({
+                suggestedName: 'index.html',
+                types: [{
+                    description: 'HTML File',
+                    accept: {'text/html': ['.html']},
+                }],
+            });
+            const writable = await handle.createWritable();
+            await writable.write(htmlString);
+            await writable.close();
+            showToast('✅ Чистая версия для GitHub успешно сохранена!');
+            return;
+        } catch(err) {
+            if (err.name !== 'AbortError') {
+                console.error(err);
+            }
+        }
+    }
+
+    // Fallback download
+    const blob = new Blob([htmlString], {type: 'text/html'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'index.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    showToast('✅ Чистая версия загружена в папку Загрузки!');
+}
+
 async function saveHtmlDocument() {
     const wasEditMode = isEditMode;
     if (isEditMode) toggleEditMode();
@@ -4802,7 +4792,101 @@ window.toggleMobileMode = function() {
         if (btn) btn.style.borderColor = 'transparent';
     }
 };
+// ---------------- BLOCK CLONE / DELETE CONTROLS ----------------
+let blockControlBar;
+let activeHoverBlock;
+
+function initBlockControls() {
+    blockControlBar = document.createElement('div');
+    blockControlBar.className = 'img-control-bar no-print'; // Reuse existing styles
+    blockControlBar.style.position = 'absolute';
+    blockControlBar.style.zIndex = '1000';
+    blockControlBar.style.opacity = '0';
+    blockControlBar.style.pointerEvents = 'none';
+    blockControlBar.style.transition = 'opacity 0.1s ease';
+    blockControlBar.style.display = 'flex';
+    blockControlBar.innerHTML = `
+        <button class="img-btn" onclick="cloneActiveBlock()" title="Дублировать (Добавить пункт)">➕ Дублировать</button>
+        <button class="img-btn" onclick="deleteActiveBlock()" title="Удалить пункт" style="color: #ff7675;">🗑️ Удалить</button>
+    `;
+    document.body.appendChild(blockControlBar);
+
+    document.addEventListener('mouseover', (e) => {
+        if (!isEditMode) {
+            if (blockControlBar.style.opacity === '1') {
+                blockControlBar.style.opacity = '0';
+                blockControlBar.style.pointerEvents = 'none';
+            }
+            return;
+        }
+
+        const target = e.target.closest('.step-item, .card, li');
+        if (target && target.closest('.page-body')) {
+            activeHoverBlock = target;
+            const rect = target.getBoundingClientRect();
+            blockControlBar.style.top = (window.scrollY + rect.top - 35) + 'px';
+            blockControlBar.style.left = (window.scrollX + rect.left + rect.width / 2) + 'px';
+            blockControlBar.style.opacity = '1';
+            blockControlBar.style.pointerEvents = 'auto';
+        } else {
+            // Only hide if we are not hovering over the control bar itself
+            if (!e.target.closest('.img-control-bar')) {
+                blockControlBar.style.opacity = '0';
+                blockControlBar.style.pointerEvents = 'none';
+                activeHoverBlock = null;
+            }
+        }
+    });
+}
+
+window.cloneActiveBlock = function() {
+    if (!activeHoverBlock) return;
+    const clone = activeHoverBlock.cloneNode(true);
+    // Renumber if it's a step item
+    if (clone.classList.contains('step-item')) {
+        const list = activeHoverBlock.closest('.step-list');
+        if (list) {
+            activeHoverBlock.insertAdjacentElement('afterend', clone);
+            // Re-number all steps in this list
+            const steps = list.querySelectorAll('.step-item .step-number');
+            steps.forEach((el, index) => {
+                el.textContent = index + 1;
+            });
+        } else {
+            activeHoverBlock.insertAdjacentElement('afterend', clone);
+        }
+    } else {
+        activeHoverBlock.insertAdjacentElement('afterend', clone);
+    }
+    // Re-apply edit attributes
+    const wasEditMode = isEditMode;
+    if (wasEditMode) {
+        toggleEditMode();
+        toggleEditMode();
+    }
+    showToast('Пункт продублирован!');
+};
+
+window.deleteActiveBlock = function() {
+    if (!activeHoverBlock) return;
+    const list = activeHoverBlock.closest('.step-list');
+    activeHoverBlock.remove();
+    activeHoverBlock = null;
+    blockControlBar.style.opacity = '0';
+    blockControlBar.style.pointerEvents = 'none';
+    
+    // Re-number if it was a step item
+    if (list) {
+        const steps = list.querySelectorAll('.step-item .step-number');
+        steps.forEach((el, index) => {
+            el.textContent = index + 1;
+        });
+    }
+    showToast('Пункт удален!');
+};
+
 
     </script>
-</body>
-</html>
+
+
+</strong></body></html>
