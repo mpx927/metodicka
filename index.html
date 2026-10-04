@@ -1534,14 +1534,58 @@ body.edit-mode .img-control-bar,
 
 
     </style>
-<style id="print-page-size">@page { size: 108mm 192mm; margin: 0; }</style><style id="print-page-size">@page { size: A4; margin: 0; }</style><style id="print-page-size">@page { size: A4; margin: 0; }</style></head>
-<body class="mobile-mode">
+<style id="print-page-size">@page { size: A4; margin: 0; }</style><style id="print-page-size">@page { size: A4; margin: 0; }</style></head>
+<body class="">
 
     <!-- ================= FLOATING TOOLBAR ================= -->
-    
+    <header class="toolbar-wrap no-print">
+        <div class="toolbar-brand">
+            <div class="brand-logo">H</div>
+            <div>
+                <div class="brand-text">Методичка по реконструкции</div>
+                <div class="brand-badge">A4 EDITABLE MASTERCLASS</div>
+            </div>
+        </div>
+
+        <div class="toolbar-center">
+            <select id="navSelect" class="nav-select">
+                <!-- Populated dynamically via JS -->
+            <option value="1">Стр. 1: ПО РЕКОНСТРУКЦИИ ВОЛОС...</option><option value="2">Стр. 2: СОДЕРЖАНИЕ...</option><option value="3">Стр. 3: СТРОЕНИЕ ВОЛОСА...</option><option value="4">Стр. 4: СТРОЕНИЕ ВОЛОСА...</option><option value="5">Стр. 5: СТРОЕНИЕ ВОЛОСА...</option><option value="6">Стр. 6: ВОДОРОДНЫЙ ПОКАЗАТЕЛЬ PH...</option><option value="7">Стр. 7: ДИАГНОСТИКА ВОЛОС...</option><option value="8">Стр. 8: ДИАГНОСТИКА ВОЛОС...</option><option value="9">Стр. 9: ДИАГНОСТИКА ВОЛОС...</option><option value="10">Стр. 10: ЭЛАСТИЧНОСТЬ ВОЛОС...</option><option value="11">Стр. 11: СТЕПЕНИ ПОВРЕЖДЕНИЯ ВОЛОС...</option><option value="12">Стр. 12: КЕРАТИНОВОЕ ВЫПРЯМЛЕНИЕ ВО...</option><option value="13">Стр. 13: БОТОКС ДЛЯ ВОЛОС...</option><option value="14">Стр. 14: БОТОКС В ТЁПЛОЙ ТЕХНИКЕ...</option><option value="15">Стр. 15: НАНОПЛАСТИКА ВОЛОС...</option><option value="16">Стр. 16: КОМПЛЕКСНАЯ РЕКОНСТРУКЦИЯ...</option><option value="17">Стр. 17: ИННОВАЦИОННАЯ РЕКОНСТРУКЦИ...</option><option value="18">Стр. 18: ХОЛОДНОЕ ВОССТАНОВЛЕНИЕ...</option><option value="19">Стр. 19: ХОЛОДНОЕ ВОССТАНОВЛЕНИЕ...</option><option value="20">Стр. 20: ХОЛОДНАЯ РЕКОНСТРУКЦИЯ...</option><option value="21">Стр. 21: СОВМЕЩЕНИЕ С ОКРАШИВАНИЕМ...</option><option value="22">Стр. 22: ПОДЛОЖКИ ДЛЯ ВОЛОС...</option><option value="23">Стр. 23: ПОДЛОЖКИ ДЛЯ ВОЛОС...</option><option value="24">Стр. 24: ПРОТЕКТОР ДЛЯ ВОЛОС...</option><option value="25">Стр. 25: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="26">Стр. 26: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="27">Стр. 27: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="28">Стр. 28: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="29">Стр. 29: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="30">Стр. 30: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="31">Стр. 31: КАК ПОЯВЛЯЕТСЯ ПЕРХОТЬ?...</option><option value="32">Стр. 32: ЧТО ТАКОЕ СЕБОРЕЯ?...</option><option value="33">Стр. 33: А СЕБОРЕЙНЫЙ ДЕРМАТИТ?...</option><option value="34">Стр. 34: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="35">Стр. 35: ЛЕЧЕНИЕ...</option><option value="36">Стр. 36: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="37">Стр. 37: ВЫПАДЕНИЕ ВОЛОС...</option><option value="38">Стр. 38: ВЫПАДЕНИЕ ВОЛОС...</option><option value="39">Стр. 39: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="40">Стр. 40: ПИЛИНГ КОЖИ ГОЛОВЫ...</option><option value="41">Стр. 41: ПИЛИНГ КОЖИ ГОЛОВЫ...</option><option value="42">Стр. 42: ПИЛИНГ КОЖИ ГОЛОВЫ...</option><option value="43">Стр. 43: ПИЛИНГ КОЖИ ГОЛОВЫ...</option><option value="44">Стр. 44: ПИЛИНГ КОЖИ ГОЛОВЫ...</option><option value="45">Стр. 45: ДОМАШНИЙ УХОД...</option><option value="1">Стр. 1: ПО РЕКОНСТРУКЦИИ ВОЛОС...</option><option value="2">Стр. 2: СОДЕРЖАНИЕ...</option><option value="3">Стр. 3: СТРОЕНИЕ ВОЛОСА...</option><option value="4">Стр. 4: СТРОЕНИЕ ВОЛОСА...</option><option value="5">Стр. 5: СТРОЕНИЕ ВОЛОСА...</option><option value="6">Стр. 6: ВОДОРОДНЫЙ ПОКАЗАТЕЛЬ PH...</option><option value="7">Стр. 7: ДИАГНОСТИКА ВОЛОС...</option><option value="8">Стр. 8: ДИАГНОСТИКА ВОЛОС...</option><option value="9">Стр. 9: ДИАГНОСТИКА ВОЛОС...</option><option value="10">Стр. 10: ЭЛАСТИЧНОСТЬ ВОЛОС...</option><option value="11">Стр. 11: СТЕПЕНИ ПОВРЕЖДЕНИЯ ВОЛОС...</option><option value="12">Стр. 12: КЕРАТИНОВОЕ ВЫПРЯМЛЕНИЕ ВО...</option><option value="13">Стр. 13: БОТОКС ДЛЯ ВОЛОС...</option><option value="14">Стр. 14: БОТОКС В ТЁПЛОЙ ТЕХНИКЕ...</option><option value="15">Стр. 15: НАНОПЛАСТИКА ВОЛОС...</option><option value="16">Стр. 16: КОМПЛЕКСНАЯ РЕКОНСТРУКЦИЯ...</option><option value="17">Стр. 17: ИННОВАЦИОННАЯ РЕКОНСТРУКЦИ...</option><option value="18">Стр. 18: ХОЛОДНОЕ ВОССТАНОВЛЕНИЕ...</option><option value="19">Стр. 19: ХОЛОДНОЕ ВОССТАНОВЛЕНИЕ...</option><option value="20">Стр. 20: ХОЛОДНАЯ РЕКОНСТРУКЦИЯ...</option><option value="21">Стр. 21: СОВМЕЩЕНИЕ С ОКРАШИВАНИЕМ...</option><option value="22">Стр. 22: ПОДЛОЖКИ ДЛЯ ВОЛОС...</option><option value="23">Стр. 23: ПОДЛОЖКИ ДЛЯ ВОЛОС...</option><option value="24">Стр. 24: ПРОТЕКТОР ДЛЯ ВОЛОС...</option><option value="25">Стр. 25: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="26">Стр. 26: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="27">Стр. 27: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="28">Стр. 28: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="29">Стр. 29: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="30">Стр. 30: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="31">Стр. 31: КАК ПОЯВЛЯЕТСЯ ПЕРХОТЬ?...</option><option value="32">Стр. 32: ЧТО ТАКОЕ СЕБОРЕЯ?...</option><option value="33">Стр. 33: А СЕБОРЕЙНЫЙ ДЕРМАТИТ?...</option><option value="34">Стр. 34: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="35">Стр. 35: ЛЕЧЕНИЕ...</option><option value="36">Стр. 36: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="37">Стр. 37: ВЫПАДЕНИЕ ВОЛОС...</option><option value="38">Стр. 38: ВЫПАДЕНИЕ ВОЛОС...</option><option value="39">Стр. 39: ОСНОВЫ ТРИХОЛОГИИ...</option><option value="40">Стр. 40: ПИЛИНГ КОЖИ ГОЛОВЫ...</option><option value="41">Стр. 41: ПИЛИНГ КОЖИ ГОЛОВЫ...</option><option value="42">Стр. 42: ПИЛИНГ КОЖИ ГОЛОВЫ...</option><option value="43">Стр. 43: ПИЛИНГ КОЖИ ГОЛОВЫ...</option><option value="44">Стр. 44: ПИЛИНГ КОЖИ ГОЛОВЫ...</option><option value="45">Стр. 45: ДОМАШНИЙ УХОД...</option></select>
+
+            <div class="zoom-group">
+                <button class="btn-zoom" id="btnMobileToggle" onclick="toggleMobileMode()" style="border-right: 1px solid #424750; border-radius: 0; padding: 6px 12px; font-weight: 600; cursor: pointer; color: #fff;">📄 A4 / Mobile</button>
+                <button class="btn-zoom" onclick="changeZoom(-10)" title="Уменьшить масштаб">−</button>
+                <span id="zoomLevel" class="zoom-level-text">100%</span>
+                <button class="btn-zoom" onclick="changeZoom(10)" title="Увеличить масштаб">+</button>
+                <button class="btn-zoom" onclick="resetZoom()" title="Сбросить к 100%">100%</button>
+            </div>
+        </div>
+
+        <div class="toolbar-actions">
+            <button id="btnEditToggle" class="btn-action btn-edit" onclick="toggleEditMode()">✏️ Режим правки</button>
+            <button id="btnSpacingToggle" class="btn-action btn-spacing" onclick="toggleSpacingMode()" title="Регулировать расстояния и отступы между любыми блоками">
+                ↕ Отступы блоков
+            </button>
+            <button class="btn-action btn-html" onclick="openHtmlModal()" title="Редактировать HTML текущей страницы">
+                &lt;/&gt; HTML страницы
+            </button>
+            <button class="btn-action btn-save" onclick="saveHtmlDocument()" title="Сохранить файл index.html со всеми правками и размерами фото">
+                💾 Сохранить HTML
+            </button>
+            <button class="btn-action btn-save" onclick="saveStudentHtml()" title="Скачать чистую версию без кнопок и панелей для загрузки на GitHub" style="background-color: #8c7853; border-color: #8c7853;">
+                🎓 Скачать для GitHub
+            </button>
+            <button class="btn-action btn-reset" onclick="resetToOriginal()" title="Сбросить все правки к исходной методичке">
+                ↺ Сбросить
+            </button>
+            <button class="btn-action btn-print" onclick="openPrintModal()" title="Скачать PDF или распечатать">
+                📄 Скачать в PDF
+            </button>
+        </div>
+    </header>
 
     <!-- ================= TOAST NOTIFICATION ================= -->
-    
+    <div id="toastMsg" class="toast-msg show">Режим правки ВЫКЛЮЧЕН.</div>
 
     <!-- Hidden file input for image replacement -->
     
@@ -1553,7 +1597,7 @@ body.edit-mode .img-control-bar,
     
 
     <!-- ================= DOCUMENT WORKSPACE ================= -->
-    <main class="document-container" style="transform: scale(1); padding-top: 20px;">
+    <main class="document-container" style="transform: scale(1);">
 
     <div class="page cover-page" id="page-1">
         <div class="cover-frame">
@@ -2109,7 +2153,8 @@ body.edit-mode .img-control-bar,
                         <div class="editable">
                             <strong>5</strong> — очень ломкие, с очень плохой эластичностью, сухие, тусклые, пористые, в мокром виде рвутся.<br>
                             <span style="color: #666;">причина:</span> все вышеперечисленное, жесткие смывки<br>
-                            <span style="color: #a02020; font-weight: 600;">процедуры:</span> только <span class="badge-cold">❄️ Холодное восстановление</span>&nbsp;</div>
+                            <span style="color: #a02020; font-weight: 600;">процедуры:</span> только <span class="badge-cold">❄️ Холодное восстановление</span> без термообработки
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2144,7 +2189,9 @@ body.edit-mode .img-control-bar,
                     <p class="editable" style=" margin-bottom:1.5mm;">
                         <strong>Эффект от <span class="badge-time">⏱️ 3–5 месяцев&nbsp;</span>Эффект накопительный.</strong><br>
                         Для работы требуется утюг с титановым/турмалиновым покрытием.<br>
-                        Окрашивание за <span class="badge-pill">7 дней до</span> процедуры и <span class="badge-pill">7 дней после</span><br></p>
+                        Окрашивание за <span class="badge-pill">7 дней до</span> процедуры и <span class="badge-pill">7 дней после</span><br>
+                        Домашний уход — строго профессиональный, содержащий в составе строго мягкие сульфаты.
+                    </p>
                     <p class="editable" style=" margin-bottom:0;">
                         Существует множество составов для кератинового выпрямления волос. В арсенале необходимо иметь хотя бы 2. Для поврежденных волос и для сильно кудрявых.
                     </p>
@@ -2221,7 +2268,9 @@ body.edit-mode .img-control-bar,
                     <p class="editable" style=" margin-bottom:0;">
                         <strong>Эффект держится от <span class="badge-time">⏱️ 1–3 месяцев</span> в зависимости от техники процедуры.</strong><br>
                         Для работы требуется утюг с титановым/турмалиновым покрытием.<br>
-                        Окрашивание за <span class="badge-pill">7 дней до</span> процедуры и <span class="badge-pill">7 дней после</span>.<br></p>
+                        Окрашивание за <span class="badge-pill">7 дней до</span> процедуры и <span class="badge-pill">7 дней после</span>.<br>
+                        Домашний уход — строго профессиональный, содержащий в составе строго мягкие сульфаты.
+                    </p>
                 </div>
 
                 <div class="card" style="background:#fff; border-color:#eedec8; padding:3.5mm 4.5mm; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
@@ -2614,7 +2663,7 @@ body.edit-mode .img-control-bar,
                     <ul class="bullet-list editable" style="margin-bottom:0; ">
                         <li>моем голову ШГО</li>
                         <li>сушим на 60%</li>
-                        <li>наносим любой концентрированный ботокс обильно</li>
+                        <li>наносим любой концентрированный ботокс обильно (я использую массажную расческу — наношу сначала на расческу и распределяю по волосам)</li>
                         <li>выдерживаем <span class="badge-time">⏱️ 25–30 минут</span></li>
                         <li>сушим феном на 100%</li>
                         <li>проходим по широким прядкам на <span class="badge-temp">🔥 160–190°C</span> в зависимости от состояния волос</li>
@@ -2628,18 +2677,13 @@ body.edit-mode .img-control-bar,
                         Приведу пример моих любимых составов:
                     </p>
                     
-                    <div style="background:#fcfaf5; padding:2.5mm 3.5mm; border-radius:5px; border:1px solid #eedec8; margin-bottom:2mm;">
+                    <div style="background:#fcfaf5; padding:2.5mm 3.5mm; border-radius:5px; border:1px solid #eedec8; ">
                         <div style="font-weight:700; color:var(--primary); margin-bottom:1mm;">1) FELPS RP (всего 2 этапа: 1 — уплотнит волос, 2 — увлажнит)</div>
                         <p class="editable" style=" margin-bottom:0;">
-                            На влажные, хорошо отжатые полотенцем волосы обильно наносим 1 этап FELPS RP и оставляем на&nbsp;<span class="badge-time">⏱️ 20 минут</span><br>Не смывая первый этап, поверх наносим 2 этап FELPS RP ещё на&nbsp;<span class="badge-time">⏱️ 20 минут</span>.&nbsp;После выдержки смываем.<br><span style="font-size: 13.3333px;">Далее смешиваем в равных пропорциях FELPS Massa + FELPS Banho de Verniz (холодный + горячий ботокс).<br></span></p><div><span style="font-size: 10pt; font-family: Inter, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;">Наносим смесь на волосы и выдерживаем</span><span style="font-size: 10pt; font-family: Inter, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;">&nbsp;</span><span class="badge-time" style="background-color: rgba(214, 180, 117, 0.09);">⏱️ 15 минут<br></span><br><span style="font-size: 13.3333px;">После выдержки подсмываем состав на 50–70%.</span></div>Высушиваем волосы на брашинг либо полностью высушиваем феном, после чего проходим утюжком по толстым прядям при температуре&nbsp;<span class="badge-temp">🔥 160–180°C</span><p></p>
-                    </div>
-
-                    <div style="background:#fcfaf5; padding:2.5mm 3.5mm; border-radius:5px; border:1px solid #eedec8;">
-                        <div style="font-weight:700; color:var(--primary); margin-bottom:1mm;">2) АМИНОКИСЛОТНАЯ АМПУЛА DR. THERAPY SOS</div>
-                        <p class="editable" style=" margin-bottom:0;">
-                            Наносим обильно на 60% влажные волосы, или под термошапку или проходим ИК-утюгом, и выдерживаем <span class="badge-time">⏱️ 20–25 минут</span>. Подсмываем! (Не смываем до конца). Также завершаю любым пленкообразователем из примера выше. Сушим на браш или сушим и проходим по толстым прядкам на <span class="badge-temp">🔥 160–180°C</span>.
+                            Наносим 1 обильно на влажные волосы, отжатые полотенцем на <span class="badge-time">⏱️ 20 минут</span>, далее не смываем и поверх наносим 2 этап тоже на <span class="badge-time">⏱️ 20 минут</span>. Смываем. Я наношу еще или липидную подложку от IQ HAIR, или крем кератин от NOVEX, или жидкий ботокс от YKAS. Сушим на браш или сушим и потом проходим по толстым прядкам на <span class="badge-temp">🔥 160–180°C</span>.
                         </p>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -2842,9 +2886,9 @@ body.edit-mode .img-control-bar,
                     <div class="card-title" style="margin-bottom:2mm;"><span class="dot"></span> КАЖДАЯ ИЗ ПОДЛОЖЕК ИМЕЕТ СВОЮ ОСОБЕННОСТЬ:</div>
                     <div class="editable">
                         <strong>Например:</strong><br>
-                        1. Кислая подложка, склеивая волос изнутри, вбирает в себя всю влагу, и тем самым волос становится обезвоженным. Отсюда следует, что необходимо восполнить влагу при помощи аминокислотной подложки.<br>
-                        2. Затем наносим протеиновую подложку для укрепления волоса и создания безопасного фундамента.<br>
-                        3. И последним этапом идёт липидная подложка, которая помогает восполнить недостаток липидов, имитируя естественный защитный слой волоса. Она сглаживает и уплотняет кутикулу, уменьшает её проницаемость, помогает удерживать влагу внутри волоса, придаёт ему эластичность, мягкость и блеск, а также создаёт защитный барьер на поверхности.
+                        1. Кислая подложка, склеивая волос изнутри, вбирает в себя всю влагу и тем самым волос становится обезвоженный, отсюда следует, что необходимо восполнить влагу при помощи аминокислотной подложки.<br>
+                        2. Затем уже наносим протеиновую подложку для укрепления волоса и создания безопасного фундамента.<br>
+                        3. И последним этапом идёт липидная подложка, которая прекрасно имитирует наш природный гидро-липидный слой.
                     </div>
                 </div>
             </div>
@@ -2891,14 +2935,20 @@ body.edit-mode .img-control-bar,
                     <div class="card" style="padding:3.5mm 4.5mm;">
                         <div class="card-title" style="margin-bottom:1.5mm;"><span class="dot"></span> ВРЕМЕННЫЕ:</div>
                         <p class="editable" style=" margin-bottom:0;">
-                            Те, которые применяются в определенные моменты. К ним относится вся качественная профессиональная защита от перегрева при использовании горячей укладки феном, щипцами, утюгами и сушки волос, а также средства, защищающие от негативного солнечного воздействия.
+                            Те, которые применяются в определенные моменты. К ним относится вся качественная, профессиональная защита (включая масла) от перегрева при использовании горячей укладки феном, щипцами, утюгами и сушки волос, а также средства, защищающие от негативного солнечного воздействия.
                         </p>
                     </div>
                 </div>
 
                 <div class="card" style="background:#fffcf8; border-color:#eedec8; padding:3.5mm 5mm;">
-                    <p class="editable" style=" margin-bottom:2mm;"></p><div><span style="font-size: 13.3333px;">В эти моменты волосы испытывают нагрузки, что напрямую влияет на их состояние: сухость, сплющивание, жжение.</span></div><div><span style="font-family: Inter, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;">Для предотвращения этих процессов на волосы наносится специальный состав, который не дает волосу нарушить водный баланс. Утюг, проходя по волосам, приглаживает чешуйки, делая укладку блестящей и абсолютно прямой. Без протектора температура воздействует на корковый слой, как следствие волос становится тонкий, хрупкий, сухой.</span></div><p></p>
-                    <p class="editable" style=" margin-bottom:0;"></p><div><span style="font-size: 13.3333px;">При нанесении защиты она выступает амортизатором, окутывая весь волос по периметру и испаряясь частично.</span></div><div><span style="font-family: Inter, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif;">Хороший протектор несмываемый, то есть жидкая фракция испаряется, а полезные и защитные компоненты остаются на поверхности волоса, образуя тонкую защитную плёнку. Она снижает потерю влаги, уменьшает трение и помогает защитить кутикулу от повреждения при воздействии высокой температуры.</span></div><p></p>
+                    <p class="editable" style=" margin-bottom:2mm;">
+                        В эти моменты волосы испытывают нагрузки, что напрямую влияет на их состояние: сухость, сплющивание, жжение.<br>
+                        Для предотвращения этих процессов на волосы наносится специальный состав, который не дает волосу нарушить водный баланс. Утюг, проходя по волосам, приглаживает чешуйки, делая укладку блестящей и абсолютно прямой. Без протектора температура воздействует на корковый слой, как следствие волос становится тонкий, хрупкий, сухой.
+                    </p>
+                    <p class="editable" style=" margin-bottom:0;">
+                        При нанесении защиты она выступает амортизатором, окутывая весь волос по периметру и испаряясь частично.<br>
+                        Хороший протектор несмываемый, то есть жидкая фракция испаряется, а полезные и скрепляющие вещества остаются.
+                    </p>
                 </div>
             </div>
         </div>
@@ -3543,7 +3593,7 @@ body.edit-mode .img-control-bar,
             </div>
 
             <div class="diagram-container" data-default-src="assets/alopecia_types.jpg" data-default-height="130">
-                <img src="assets/alopecia_types.jpg" alt="Виды алопеции: АГА и гнездная" style="max-height: 126mm; height: auto;">
+                <img src="assets/alopecia_types.jpg" alt="Виды алопеции: АГА и гнездная" style="max-height: 130mm; height: auto;">
                 <div class="diagram-caption editable">Виды алопеции: андрогенетическая (АГА) и очаговая (гнездная)</div>
             </div>
 
